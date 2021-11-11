@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_guide/tween-animation/tween_animation.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,26 +25,27 @@ class MenuLateral extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Ink(
             color: Colors.indigo,
-            child: const ListTile(
-              title: Text(
-                "MENU 1",
+            child: ListTile(
+              title: const Text(
+                "Tween Animation",
                 style: TextStyle(color: Colors.white),
+              ),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => TweenAnimation(),
+                ),
+              ),
+              leading: Icon(
+                Icons.animation,
+                color: Colors.white,
               ),
             ),
           ),
-          ListTile(
-            title: const Text("MENU 2"),
-            onTap: () {},
-          ),
-          const ListTile(
-            title: Text("MENU 3"),
-          ),
-          const ListTile(
-            title: Text("MENU 4"),
-          )
         ],
       ),
     );
