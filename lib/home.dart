@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Ejemplo de widgets'),
       ),
-      drawer: MenuLateral(),
+      drawer: const MenuLateral(),
       body: const Center(
         child: Text('Home page'),
       ),
@@ -37,12 +37,31 @@ class MenuLateral extends StatelessWidget {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => TweenAnimation(),
+                  builder: (_) => const TweenAnimation(),
                 ),
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.animation,
                 color: Colors.white,
+              ),
+            ),
+          ),
+          Ink(
+            color: Colors.amber,
+            child: ListTile(
+              title: const Text(
+                "Imput",
+                style: TextStyle(color: Colors.black),
+              ),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const TweenAnimation(),
+                ),
+              ),
+              leading: const Icon(
+                Icons.input,
+                color: Colors.black,
               ),
             ),
           ),
